@@ -1,22 +1,24 @@
-// server.js
-// where your node app starts
+'use strict';
 
-// init project
 const express = require('express');
+const logger = require('./utils/logger');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+
 const app = express();
-
-// we've started you off with Express, 
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
-
-// http://expressjs.com/en/starter/static-files.html
+app.use(cookieParser());
+const exphbs = require('express-handlebars');
+app.use(bodyParser.urlencoded({ extended: false, }));
 app.use(express.static('public'));
+app.engine('.hbs', exphbs({
+  extname: '.hbs',
+  defaultLayout: 'main',
+}));
+app.set('view engine', '.hbs');
 
-// http://expressjs.com/en/starter/basic-routing.html
-app.get('/', function(request, response) {
-  response.sendFile(__dirname + '/views/index.html');
-});
+const routes = require('./routes');
+app.use('/', routes);
 
-// listen for requests :)
-const listener = app.listen(process.env.PORT, function() {
-  console.log('Your app is listening on port ' + listener.address().port);
+const listener = app.listen(process.env.PORT, function () {
+  logger.info(`glitch-playlist1 started on port ${listener.address().port}`);
 });
