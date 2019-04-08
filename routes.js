@@ -5,7 +5,7 @@ const router = express.Router();
 
 const start = require('./controllers/start');
 const dashboard = require('./controllers/dashboard.js');
-const playlist = require('./controllers/playlist.js');
+const invoiceCollection = require('./controllers/invoiceCollection.js');
 const about = require('./controllers/about.js');
 const accounts = require ('./controllers/accounts.js');
 
@@ -19,12 +19,14 @@ router.post('/authenticate', accounts.authenticate);
 router.get('/start', start.index);
 
 router.get('/dashboard', dashboard.index);
-router.get('/dashboard/deleteplaylist/:id', dashboard.deletePlaylist);
-router.post('/dashboard/addplaylist', dashboard.addPlaylist);
+router.get('/dashboard/deleteInvoiceCollection/:id', dashboard.deleteInvoiceCollection);
+router.post('/dashboard/addInvoiceCollection', dashboard.addInvoiceCollection);
 
-router.get('/playlist/:id', playlist.index);
-router.get('/playlist/:id/deletesong/:songid', playlist.deleteSong);
-router.post('/playlist/:id/addsong', playlist.addSong);
+router.post('/invoiceCollection/uploadpicture', dashboard.uploadPicture);
+
+router.get('/invoiceCollection/:id', invoiceCollection.index);
+router.get('/invoiceCollection/:id/deleteInvoice/:invoiceId', invoiceCollection.deleteInvoice);     //###might be invoiceId
+router.post('/invoiceCollection/:id/addInvoice', invoiceCollection.addInvoice);
 
 router.get('/about', about.index);
 

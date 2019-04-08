@@ -1,0 +1,35 @@
+<table class="ui sortable inverted celled table">
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Invoice Number</th>
+        <th>Net Amount</th>
+        <th>VAT Amount</th>
+        <th>Total Amount</th>
+        <th>Status</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each invoiceCollection.invoices}}
+        <tr>
+            <td>{{date}}</td>
+            <td>{{invoiceNumber}}</td>
+            <td>{{netAmount}}</td>
+            <td>{{vatAmount}}</td>
+            <td>{{totalAmount}}</td>
+            <td>{{status}}</td>
+            <td>
+                <form action="/listInvoices/uploadpicture" method="post" enctype="multipart/form-data">
+                </form>
+                <button class="ui mini blue submit button"> File Upload</button>
+                <a href="/invoiceCollection/{{../invoiceCollection.id}}/updateInvoice/{{id}}"
+                   class="ui tiny purple button">Edit Invoice</a>
+                <a href="/invoiceCollection/{{../invoiceCollection.id}}/deleteInvoice/{{id}}"
+                   class="ui tiny red button deleteInvoice">Delete Invoice</a>
+            </td>
+        </tr>
+        </form>
+    {{/each}}
+    </tbody>
+</table>

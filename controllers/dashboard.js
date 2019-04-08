@@ -2,45 +2,45 @@
 
 const uuid = require('uuid');
 const logger = require('../utils/logger');
-const accounts = require ('./accounts.js');
-const playlistStore= require('../models/playlist-store');
+const accounts = require('./accounts.js');
+const invoiceStore = require('../models/invoiceCollectionLibrary');
 
 const dashboard = {
-  index(request, response) {
-    logger.info('dashboard rendering');
-    const loggedInUser = accounts.getCurrentUser(request);
-    if (loggedInUser) {
-    const viewData = {
-      title: 'Playlist Dashboard',
-      playlists: playlistStore.getUserPlaylists(loggedInUser.id),
-      fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
-    };
-    logger.info('about to render', playlistStore.getAllPlaylists());
-    response.render('dashboard', viewData);
-    }
-    else response.redirect('/');
-  },
-  
-  deletePlaylist(request, response) {
-    const playlistId = request.params.id;
-    logger.debug(`Deleting Playlist ${playlistId}`);
-    playlistStore.removePlaylist(playlistId);
-    response.redirect('/dashboard');
-  },
-  
-  addPlaylist(request, response) {
-    const loggedInUser = accounts.getCurrentUser(request);
-    const newPlayList = {
-      id: uuid(),
-      userid: loggedInUser.id,
-      title: request.body.title,
-      songs: [],
-    };
-    logger.debug('Creating a new Playlist', newPlayList);
-    playlistStore.addPlaylist(newPlayList);
-    response.redirect('/dashboard');
-  },
-  
+    index(request, response) {
+        logger.info('dashboard rendering');
+        const loggedInUser = accounts.getCurrentUser(request);
+        if (loggedInUser) {
+            const viewData = {
+                title: 'Invoice Dashboard',
+                invoicelists: invoiceStore.getUserInvoiceCollections(loggedInUser.id),
+                fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
+            };
+            logger.info('about to render dashboard.index');
+            response.render('dashboard', viewData);
+        } else response.redirect('/');
+    },
+
+    deleteInvoiceCollection(request, response) {
+        const invoiceCollectionId = request.params.id;
+        logger.debug(`Deleting Invoice ${invoiceCollectionId}`);
+        invoiceStore.removeInvoiceCollection(invoiceCollectionId);
+        response.redirect('/dashboard');
+    },
+
+    addInvoiceCollection(request, response) {
+        logger.info(`Getting into addInvoice in dashboard.js`)
+        const loggedInUser = accounts.getCurrentUser(request);
+        const newInvoiceCollection = {
+            id: uuid(),
+            userid: loggedInUser.id,
+            title: request.body.title,
+            invoices: [],
+        };
+        logger.debug('Creating a new InvoiceCollection', newInvoiceCollection);
+        invoiceStore.addInvoiceCollection(newInvoiceCollection);
+        response.redirect('/dashboard');
+    },
+
 };
 
 module.exports = dashboard;
