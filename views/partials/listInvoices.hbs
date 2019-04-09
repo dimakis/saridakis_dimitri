@@ -18,32 +18,16 @@
             <td>{{invoiceNumber}}</td>
             <td>{{netAmount}}</td>
             <td>{{vatAmount}}</td>
+            <td>{{vatRate}}</td>
             <td>{{status}}</td>
             <td>{{totalAmount}}</td>
-            <td></td>
             <td>
-                <form action="/listInvoices/uploadpicture" method="post" enctype="multipart/form-data">
-                </form>
-                <button class="ui mini blue submit button"> File Upload</button>
-                <a href="/invoiceCollection/{{../invoiceCollection.id}}/updateInvoice/{{id}}"
-                   class="ui tiny purple button">Edit Invoice</a>
-                <a href="/invoiceCollection/{{../invoiceCollection.id}}/deleteInvoice/{{id}}"
-                   class="ui tiny red button deleteInvoice">Delete Invoice</a>
+                <a href="/invoiceCollection/{{../invoiceCollection.id}}/updateInvoice/{{id}}">
+                    <i class=" yellow edit outline icon"></i></a>
+                <a href="/invoiceCollection/{{../invoiceCollection.id}}/deleteInvoice/{{id}}"> <i class=" red trash icon"></i></a>
             </td>
         </tr>
         </form>
     {{/each}}
     </tbody>
 </table>
-
-
-<!–– <div class="ui form">
-    <div class="field">
-        <select>
-            <option value=9>9%</option>
-            <option value=13.5>13.5%</option>
-            <option value=23>23%</option>
-        </select>
-    </div>
-</div>
-––>

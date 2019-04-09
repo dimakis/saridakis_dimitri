@@ -4,3 +4,9 @@ body {
   background-repeat: repeat;
   background-size:cover;
 }
+
+#menuName {
+  color: red;
+  position: absolute;
+;
+}

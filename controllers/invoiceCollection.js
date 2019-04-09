@@ -62,10 +62,10 @@ const invoiceCollection = {
         response.redirect('/listInvoiceCollections/' + invoiceCollectionId);
     },
 
-    uploadPicture(request, response) {
+    uploadPicture(request) {//, response) {
         const loggedInUser = accounts.getCurrentUser(request);
-        pictureStore.addPicture(loggedInUser.id, request.body.title, request.files.picture, function () {
-            response.redirect('/dashboard');
+        invoiceStore.addPicture(loggedInUser.id, request.body.title, request.files.picture, function () {
+            //response.redirect('/dashboard');
         });
     },
 /*

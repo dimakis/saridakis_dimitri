@@ -4,6 +4,7 @@ const uuid = require('uuid');
 const logger = require('../utils/logger');
 const accounts = require('./accounts.js');
 const invoiceStore = require('../models/invoiceCollectionLibrary');
+const pictureStore = require('../models/picture-store');
 
 const dashboard = {
     index(request, response) {
@@ -22,10 +23,19 @@ const dashboard = {
                 invoicelists: invoiceStore.getUserInvoiceCollections(loggedInUser.id),
                 fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
                 totalInvoices: totalInvoices,
+                album: pictureStore.getAlbum(loggedInUser.id),
+
             };
             logger.info('about to render dashboard.index');
             response.render('dashboard', viewData);
         } else response.redirect('/');
+    },
+
+    uploadPicture(request, response) {
+        const loggedInUser = accounts.getCurrentUser(request);
+        pictureStore.addPicture(loggedInUser.id, request.body.title, request.files.picture, function () {
+            response.redirect('/dashboard');
+        });
     },
 
     deleteInvoiceCollection(request, response) {
@@ -46,6 +56,18 @@ const dashboard = {
         };
         logger.debug('Creating a new InvoiceCollection', newInvoiceCollection);
         invoiceStore.addInvoiceCollection(newInvoiceCollection);
+        response.redirect('/dashboard');
+    },
+
+    deleteAllPictures(request, response) {
+        const loggedInUser = accounts.getCurrentUser(request);
+        pictureStore.deleteAllPictures(loggedInUser.id);
+        response.redirect('/dashboard');
+    },
+
+    deletePicture(request, response) {
+        const loggedInUser = accounts.getCurrentUser(request);
+        pictureStore.deletePicture(loggedInUser.id, request.query.img);
         response.redirect('/dashboard');
     },
 

@@ -44,7 +44,7 @@ const accounts = {
     if (user && user.password === request.body.password) {
       response.cookie('invoiceCollection', user.email);
       logger.info(`logging in ${user.email}`);
-      response.redirect('/dashboard');
+      response.redirect('/start');
     } else {
       response.redirect('/login');
     }

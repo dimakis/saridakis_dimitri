@@ -1,16 +1,18 @@
 'use strict';
 
+
 const _ = require('lodash');
 const JsonStore = require('./json-store');
 
 const invoiceCollectionLibrary = {
+
 
   store: new JsonStore('./models/invoiceCollectionLibrary.json', { invoiceCollection: [] }),
   collection: 'invoiceCollection',
 
 
   getAllInvoiceCollections() {
-    logger.info(store);
+    //logger.info(store);
     return this.store.findAll(this.collection);
   },
 
@@ -37,7 +39,44 @@ const invoiceCollectionLibrary = {
 
   addInvoice(id, invoice) {
     const invoiceCollection = this.getInvoiceCollection(id);
+    //invoiceCollection.addPicture();
     invoiceCollection.invoices.push(invoice);
+  },
+/*
+  addPicture(userId, title, imageFile, response) {
+    let album = this.getAlbum(userId);
+    if (!album) {
+      album = {
+        userid: userId,
+        invoices: [],
+      };
+      this.store.add(this.collection, album);
+    }
+
+    imageFile.mv('tempimage', err => {
+      if (!err) {
+        cloudinary.uploader.upload('tempimage', result => {
+          console.log(result);
+          const picture = {
+            img: result.url,
+            title: title,
+          };
+          album.photos.push(picture);
+          response();
+        });
+      }
+    });
+  },
+
+
+  addPicToInvoice(id, invoiceId, picUrl)  {
+    const invoiceCollection = this.invoiceCollection(id);
+    const invoices = invoiceCollection.invoices;
+    const
+  },
+*/
+  getAllInvoices()  {
+    return this.store.findAll(this.collection.invoices)
   },
 
   removeInvoice(id, invoiceId) {

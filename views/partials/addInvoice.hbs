@@ -12,27 +12,32 @@
             <label>Net Amount</label>
             <input placeholder="Net" type="text" name="netAmount" required>
         </div>
-        <div class="field">
-            <label>VAT Amount</label>
-            <input placeholder="VAT" type="text" name="vatAmount" required>
-        </div>
-        <div class="ui form">
-            <div class="field">
-                <select>
-                    <option value=9>9%</option>
-                    <option value=13.5>13.5%</option>
-                    <option value=23>23%</option>
-                </select>
-            </div>
+        <div class=" field ui form">
+            <label>VAT Rate</label>
+            <select id="vatRate" required>
+                <option value="9">9%</option>
+                <option value="13.5">13.5%</option>
+                <option value="23">23%</option>
+            </select>
         </div>
         <div class="field">
-            <label>Status</label>
-            <input placeholder="Status" type="text" name="status" required>
+            <label>Invoice Status</label>
+            <select id="invoiceStatus">
+                <option value="paid">Paid</option>
+                <option value="due">Due</option>
+                <option value="overDue">Over-due</option>
+            </select>
         </div>
-        <div class="field">
-            <label>Total Amount</label>
-            <input placeholder="Total" type="text" name="totalAmount" required>
-        </div>
+        <form action="/invoiceCollection/uploadpicture" method="post" enctype="multipart/form-data">
+                <div class="field">
+                    <label>File</label>
+                    <input type="file" name="picture">
+                </div>
+                <div class="field">
+                    <label>File Title</label>
+                    <input placeholder="Title" type="text" name="title">
+                </div>
+            <button> <i class="paper plane icon"></i></button>
+        </form>
     </div>
-    <button class="ui green submit button">Add Invoice</button>
 </form>

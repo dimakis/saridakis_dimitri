@@ -7,7 +7,9 @@
     <p>
         This app may or may not be brought to you by these guys...
     </p>
-    <img class="ui large middle aligned rounded image" src="https://cdn.glitch.com/64d66aa6-ac6a-4743-b033-486978dcd43a%2Fparcels.jpg?1551828444662" alt="Team of coders">
+    <img class="ui large middle aligned rounded image"
+         src="https://cdn.glitch.com/64d66aa6-ac6a-4743-b033-486978dcd43a%2Fparcels.jpg?1551828444662"
+         alt="Team of coders">
     <p>
         invoCol. LTD.,
         Waterford,
@@ -16,5 +18,25 @@
     <p>
         Follow us <i class="twitter icon"></i> ...not in real life please!
     </p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39072.87367744188!2d-7.143056781468046!3d52.26055345528445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4842c69bc68c020b%3A0x721e5f2107f990b5!2sThe+Viking+Triangle%2C+Waterford!5e0!3m2!1sen!2sie!4v1551570330243" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39072.87367744188!2d-7.143056781468046!3d52.26055345528445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4842c69bc68c020b%3A0x721e5f2107f990b5!2sThe+Viking+Triangle%2C+Waterford!5e0!3m2!1sen!2sie!4v1551570330243"
+            width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <p>
+    <form class="ui stacked segment form" action="/comments/addComment" method="POST">
+        <div class="field">
+            <label>Comments</label>
+            <input placeholder="Comment" type="text" name="comment" autofocus required>
+        </div>
+        <button class="ui blue submit button">Post Comment</button>
+    </form>
+    </p>
 </section>
+{{> comment}}
+
+
+{{#each commentCollection}}
+<section>
+    <h2>{{name}}</h2>
+    <h3>{{formatDate date}}</h3>
+    <h3>{{comment}}</h3>
+</section>
+        {{/each}}

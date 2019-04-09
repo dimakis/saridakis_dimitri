@@ -3,4 +3,23 @@
 <section class="ui inverted tertiary grey segment">
     {{> listInvoiceCollections}}
     {{> addInvoiceCollection}}
+    {{> addImages}}
+
+
+<section class="ui raised segment">
+    <h3 class="ui header">
+        Your Pictures:
+    </h3>
+    <div class="ui cards">
+        {{#each album.photos}}
+            {{> card }}
+        {{/each}}
+    </div>
+    <br>
+    <Grid>
+    <div class="ui center align segment">
+        <a href="/dashboard/deleteallpictures"> <button class="negative center align ui button">Delete All</button></a>
+    </div>
+    </Grid>
+</section>
 </section>

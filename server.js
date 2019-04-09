@@ -5,28 +5,48 @@ const logger = require('./utils/logger');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const fileUpload = require('express-fileupload');
+//const invoiceLibrary = require('./invoiceCollectionLibrary');
 
 
 const app = express();
 app.use(cookieParser());
 const exphbs = require('express-handlebars');
-app.use(bodyParser.urlencoded({ extended: false, }));
+app.use(bodyParser.urlencoded({extended: false,}));
 app.use(express.static('public'));
 app.use(fileUpload());
 app.engine('.hbs', exphbs({
-  extname: '.hbs',
-  defaultLayout: 'main',
+    extname: '.hbs',
+    defaultLayout: 'main',
 
-helpers: {
+    helpers: {/*
+        calculateTotalAmount: function (netAmount, vatAmount, vatRate) {
+            let total = new TotalAmount()
+            var i;
+            for (i =0; i <  )
 
-}
 
+                let net = TotalAmount.getAllInvoiceCollections();
+        },*/
+        formatDate: function (commentdate) {
+            let d = new Date(commentdate);
+            let daynum = d.getDate();
+            let month = d.getMonth();
+            let thisYear = d.getFullYear();
+
+            let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            let monthname = months[month];
+
+            return monthname + " " + daynum + ", " + thisYear;
+
+        }
+    }
 }));
+
 app.set('view engine', '.hbs');
 
 const routes = require('./routes');
 app.use('/', routes);
 
 const listener = app.listen(process.env.PORT, function () {
-  logger.info(`glitch-playlist1 started on port ${listener.address().port}`);
+    logger.info(`glitch-playlist1 started on port ${listener.address().port}`);
 });

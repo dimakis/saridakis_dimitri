@@ -4,40 +4,48 @@
       "id": "f98e2786-152c-4c7d-b3e9-7c1693181478",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "title": "Green Ale LTD",
-      "invoices": [
-        {
-          "id": "cc013c70-9f6d-488e-8b73-6c50d2b104ba",
-          "date": "1",
-          "invoiceNumber": "1",
-          "netAmount": "1",
-          "vatAmount": "1",
-          "totalAmount": "1",
-          "status": "1"
-        },
-        {
-          "id": "cd72f998-2330-49dd-8a81-7d7996fb6b7a",
-          "date": "1",
-          "invoiceNumber": "1",
-          "netAmount": "1",
-          "vatAmount": "1",
-          "totalAmount": "1",
-          "status": "1"
-        }
-      ]
+      "invoices": []
     },
     {
-      "id": "a18fa744-2da9-47ee-9ed2-7c3682850590",
+      "id": "f0b68355-6c87-486d-932f-386f751e692d",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "title": "1",
+      "title": "One",
       "invoices": [
         {
-          "id": "1e6aac56-9438-4b5c-a4c8-4cc961ff0f5f",
+          "id": "985ac189-5f39-47bd-91b3-2f54efa06f73",
+          "date": "2",
+          "invoiceNumber": "2",
+          "netAmount": "2"
+        },
+        {
+          "id": "b7cc989b-391b-4bc0-b6bf-0c4e5a604048",
           "date": "1",
           "invoiceNumber": "1",
-          "netAmount": "11",
-          "vatAmount": "1",
-          "totalAmount": "1",
-          "status": "1"
+          "netAmount": "1"
+        },
+        {
+          "id": "de034488-7551-4515-8984-8fbef2daaf54",
+          "date": "1",
+          "invoiceNumber": "1",
+          "netAmount": "1"
+        },
+        {
+          "id": "ddd6be9a-5b52-4cfe-ba25-09ea263ceadb",
+          "date": "1",
+          "invoiceNumber": "1",
+          "netAmount": "1"
+        },
+        {
+          "id": "fa4df8af-c36f-4d74-94f5-e007986d7b7c",
+          "date": "1",
+          "invoiceNumber": "1",
+          "netAmount": "1"
+        },
+        {
+          "id": "807b7329-7446-4e57-843a-f2eb3e0d3609",
+          "date": "1",
+          "invoiceNumber": "1",
+          "netAmount": "1"
         }
       ]
     }
