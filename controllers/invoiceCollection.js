@@ -68,7 +68,11 @@ const invoiceCollection = {
             response.redirect('/dashboard');
         });
     },
-
+/*
+    calculateVat(request, response) {
+        const
+    }
+*/
 };
 
 module.exports = invoiceCollection;

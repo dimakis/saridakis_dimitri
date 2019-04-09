@@ -10,10 +10,18 @@ const dashboard = {
         logger.info('dashboard rendering');
         const loggedInUser = accounts.getCurrentUser(request);
         if (loggedInUser) {
+
+            const totalInvoicesInCollection = invoiceStore.getAllInvoiceCollections();
+            let totalInvoices = 0;
+            for (let i in totalInvoicesInCollection)    {
+                totalInvoices += totalInvoicesInCollection[i].invoices.length;
+            }
+
             const viewData = {
                 title: 'Invoice Dashboard',
                 invoicelists: invoiceStore.getUserInvoiceCollections(loggedInUser.id),
                 fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
+                totalInvoices: totalInvoices,
             };
             logger.info('about to render dashboard.index');
             response.render('dashboard', viewData);

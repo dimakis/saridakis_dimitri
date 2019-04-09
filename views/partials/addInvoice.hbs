@@ -1,5 +1,5 @@
 <form class="ui stacked segment form" action="/invoiceCollection/{{invoiceCollection.id}}/addInvoice" method="POST">
-    <div class="six fields">
+    <div class="seven fields">
         <div class="field">
             <label>Date</label>
             <input placeholder="Date" type="text" name="date" autofocus required>
@@ -16,13 +16,22 @@
             <label>VAT Amount</label>
             <input placeholder="VAT" type="text" name="vatAmount" required>
         </div>
-        <div class="field">
-            <label>Total Amount</label>
-            <input placeholder="Total" type="text" name="totalAmount" required>
+        <div class="ui form">
+            <div class="field">
+                <select>
+                    <option value=9>9%</option>
+                    <option value=13.5>13.5%</option>
+                    <option value=23>23%</option>
+                </select>
+            </div>
         </div>
         <div class="field">
             <label>Status</label>
             <input placeholder="Status" type="text" name="status" required>
+        </div>
+        <div class="field">
+            <label>Total Amount</label>
+            <input placeholder="Total" type="text" name="totalAmount" required>
         </div>
     </div>
     <button class="ui green submit button">Add Invoice</button>

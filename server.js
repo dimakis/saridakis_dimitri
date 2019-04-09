@@ -16,6 +16,11 @@ app.use(fileUpload());
 app.engine('.hbs', exphbs({
   extname: '.hbs',
   defaultLayout: 'main',
+
+helpers: {
+
+}
+
 }));
 app.set('view engine', '.hbs');
 

@@ -5,8 +5,9 @@
         <th>Invoice Number</th>
         <th>Net Amount</th>
         <th>VAT Amount</th>
-        <th>Total Amount</th>
+        <th>VAT Rate</th>
         <th>Status</th>
+        <th>Total Amount</th>
         <th></th>
     </tr>
     </thead>
@@ -17,8 +18,9 @@
             <td>{{invoiceNumber}}</td>
             <td>{{netAmount}}</td>
             <td>{{vatAmount}}</td>
-            <td>{{totalAmount}}</td>
             <td>{{status}}</td>
+            <td>{{totalAmount}}</td>
+            <td></td>
             <td>
                 <form action="/listInvoices/uploadpicture" method="post" enctype="multipart/form-data">
                 </form>
@@ -33,3 +35,15 @@
     {{/each}}
     </tbody>
 </table>
+
+
+<!–– <div class="ui form">
+    <div class="field">
+        <select>
+            <option value=9>9%</option>
+            <option value=13.5>13.5%</option>
+            <option value=23>23%</option>
+        </select>
+    </div>
+</div>
+––>

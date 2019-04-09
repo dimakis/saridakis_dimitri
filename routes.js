@@ -22,7 +22,9 @@ router.get('/dashboard', dashboard.index);
 router.get('/dashboard/deleteInvoiceCollection/:id', dashboard.deleteInvoiceCollection);
 router.post('/dashboard/addInvoiceCollection', dashboard.addInvoiceCollection);
 
-router.post('/invoiceCollection/uploadpicture', dashboard.uploadPicture);
+router.post('/invoiceCollection/uploadpicture', invoiceCollection.uploadPicture);
+//router.get('/invoiceCollection/deleteAllPictures', invoiceCollection.deleteAllPictures);
+//router.get('/invoiceCollection/deletePicture', invoiceCollection.deletePicture);
 
 router.get('/invoiceCollection/:id', invoiceCollection.index);
 router.get('/invoiceCollection/:id/deleteInvoice/:invoiceId', invoiceCollection.deleteInvoice);     //###might be invoiceId

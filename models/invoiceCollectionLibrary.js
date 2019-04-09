@@ -53,6 +53,11 @@ const invoiceCollectionLibrary = {
     invoices[thepos].title=invoiceDetails.title;
     invoices[thepos].artist=invoiceDetails.artist;
   },
+
+  calcVat(id, invoice)  {
+    const invoiceToCalc = this.collection.invoices.findByIds(invoiceCollection.id)
+
+  }
   
 };
 
