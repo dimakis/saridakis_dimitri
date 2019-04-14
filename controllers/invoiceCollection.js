@@ -1,10 +1,18 @@
 'use strict';
 
+
+const cloudinary = require('cloudinary');
 const logger = require('../utils/logger');
 const uuid = require('uuid');
 const invoiceStore = require('../models/invoiceCollectionLibrary');
 const accounts = require('./accounts.js');
 const pictureStore = require('../models/picture-store');
+
+cloudinary.config({
+    cloud_name: "dimdakis",
+    api_key: "771758987377332",
+    api_secret: "CAOT2N2hvimhH8zyJNPYBm8kw0E"
+});
 
 const invoiceCollection = {
     index(request, response) {
@@ -20,8 +28,7 @@ const invoiceCollection = {
             };
             logger.debug('InvoiceCollection id', invoiceStore.getInvoiceCollection(invoiceCollectionId));
             response.render('invoiceCollectionLibrary', viewData);
-        }
-        else response.redirect('/');
+        } else response.redirect('/');
     },
 
     deleteInvoice(request, response) {
@@ -32,47 +39,110 @@ const invoiceCollection = {
         response.redirect('/invoiceCollection/' + invoiceCollectionId);
     },
 
-    addInvoice(request, response) {
+    addInvoice: function (request, response) {
+        const loggedInUserId = accounts.getCurrentUserUserId(request);
+        logger.info('logged in user Id = ' + loggedInUserId);
         const invoiceCollectionId = request.params.id;
         const invoiceCollection = invoiceStore.getInvoiceCollection(invoiceCollectionId);
+        const vatRateCalc = request.body.vatRate * .01;
+        const netAmount = request.body.netAmount;
+        let vatAmount1 = netAmount * vatRateCalc;
+        const vatAmount = vatAmount1.toFixed(2);
+        let totalAmount1 = (parseFloat(netAmount) + vatAmount1).toFixed(2);
+
+        const imgTitle = request.body.imageTitle;
+        //let imgFile = request.file.myImage;
+
+
+       const newImage = {
+
+       }
         const newInvoice = {
             id: uuid(),
             date: request.body.date,
             invoiceNumber: request.body.invoiceNumber,
             netAmount: request.body.netAmount,
-            vatAmount: request.body.vatAmount,
-            totalAmount: request.body.totalAmount,
-            status: request.body.status,
-
-        };
-        //logger.info('getting', invoiceStore.getInvoiceCollection(invoiceCollectionId));
+            vatRate: request.body.vatRate + "%",
+            vatAmount: vatAmount,
+            totalAmount: totalAmount1,
+            image:request.file.myImage,
+            imageTitle: imgTitle,
+            //photos: [],
+        }
         invoiceStore.addInvoice(invoiceCollectionId, newInvoice);
+        //this.uploadPicture(loggedInUserId,imgTitle,imgFile);
+        logger.info('imgTitle = ' + imgTitle + ', imgFile = ' + imgFile);
+        this.uploadPicture(loggedInUserId,request.body.imgTitle,request.body.imgFile);
+        logger.info('imgTitle = ' + imgTitle + ', imgFile = ' + imgFile);
+
+        //this.uploadPicture(request, response);
+/*
+                //invoiceStore.addPicture(loggedInUser, picTitle, imageFile, response)
+                imageFile.mv('tempimage', err => {
+                    if (!err) {
+                        cloudinary.uploader.upload('tempimage', result => {
+                            console.log(result);
+                            const picture = {
+                                img: result.url,
+                                title: title,
+                            };
+                            album.photos.push(picture);
+                            response();
+                        });
+                    }
+                }),
+*/
         response.redirect('/invoiceCollection/' + invoiceCollectionId);
     },
 
-    updateInvoice(request, response) {
+    updateInvoicePage(request, response) {
+        const loggedInUser = accounts.getCurrentUser(request);
         const invoiceCollectionId = request.params.id;
-        const invoiceId = request.params.invoiceId;
-        logger.debug("updating song " + invoiceId);
-        const alterInvoice = {
-            title: request.body.title,
-            artist: request.body.artist,
-        };
-        invoiceStore.editInvoice(invoiceCollectionId, invoiceId, alterInvoice);
-        response.redirect('/listInvoiceCollections/' + invoiceCollectionId);
+        const invoiceId = request.params.id;
+        logger.info('im in the invoiceCollection Controller, invoColID: ' + invoiceCollectionId + ', invo: ' + invoiceId);
+        response.redirect('/updateInvoicePage/' + invoiceCollectionId + invoiceId + loggedInUser);
+
     },
 
-    uploadPicture(request) {//, response) {
+    uploadPicture(request, response) {
         const loggedInUser = accounts.getCurrentUser(request);
-        invoiceStore.addPicture(loggedInUser.id, request.body.title, request.files.picture, function () {
-            //response.redirect('/dashboard');
+        invoiceStore.addPicture(loggedInUser.id, request.body.imageTitle, request.files.image, function () {
+            response.redirect('/invoiceCollection');
         });
     },
-/*
-    calculateVat(request, response) {
-        const
-    }
-*/
 };
 
 module.exports = invoiceCollection;
+
+/*
+    updateInvoice(request, response) {
+        const invoiceCollectionId = request.params.id;
+
+        //response.redirect('/invoiceCollection/editInvoice/' + invoiceCollectionId);
+
+        const invoiceId = request.params.invoiceId;
+        logger.debug("updating song " + invoiceId);
+        const alterInvoice = {
+            date: request.body.date,
+            invoiceNumber: request.body.invoiceNumber,
+            netAmount: request.body.netAmount,
+            vatAmount: request.body.vatAmount,
+            totalAmount: request.body.totalAmount,
+
+        };
+        invoiceStore.editInvoice(invoiceCollectionId, invoiceId, alterInvoice);
+        response.redirect('/invoiceCollection/' + invoiceCollectionId);
+    },
+
+
+    /* function () {
+                response.redirect('/invoiceCollection');
+            });
+        },
+    /*
+        calculateVat(request, response) {
+            const
+        }
+    */
+
+

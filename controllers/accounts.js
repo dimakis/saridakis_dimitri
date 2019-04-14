@@ -5,55 +5,67 @@ const uuid = require('uuid');
 
 const accounts = {
 
-  index(request, response) {
-    const viewData = {
-      title: 'Login or Signup',
-    };
-    response.render('index', viewData);
-  },
+    index(request, response) {
+        const viewData = {
+            title: 'Login or Signup',
+        };
+        response.render('index', viewData);
+    },
 
-  login(request, response) {
-    const viewData = {
-      title: 'Login to the Service',
-    };
-    response.render('login', viewData);
-  },
+    login(request, response) {
+        const viewData = {
+            title: 'Login to the Service',
+        };
+        response.render('login', viewData);
+    },
 
-  logout(request, response) {
-    response.cookie('invoiceCollection', '');
-    response.redirect('/');
-  },
+    logout(request, response) {
+        response.cookie('invoiceCollection', '');
+        response.redirect('/');
+    },
 
-  signup(request, response) {
-    const viewData = {
-      title: 'Login to the Service',
-    };
-    response.render('signup', viewData);
-  },
+    signup(request, response) {
+        const viewData = {
+            title: 'Login to the Service',
+        };
+        response.render('signup', viewData);
+    },
 
-  register(request, response) {
-    const user = request.body;
-    user.id = uuid();
-    userstore.addUser(user);
-    logger.info(`registering ${user.email}`);
-    response.redirect('/');
-  },
+    register(request, response) {
+        const user = request.body;
+        user.id = uuid();
+        userstore.addUser(user);
+        logger.info(`registering ${user.email}`);
+        response.redirect('/');
+    },
 
-  authenticate(request, response) {
-    const user = userstore.getUserByEmail(request.body.email);
-    if (user && user.password === request.body.password) {
-      response.cookie('invoiceCollection', user.email);
-      logger.info(`logging in ${user.email}`);
-      response.redirect('/start');
-    } else {
-      response.redirect('/login');
-    }
-  },
+    authenticate(request, response) {
+        const user = userstore.getUserByEmail(request.body.email);
+        if (user && user.password === request.body.password) {
+            response.cookie('invoiceCollection', user.email);
+            logger.info(`logging in ${user.email}`);
+            response.redirect('/start');
+        } else {
+            response.redirect('/login');
+        }
+    },
 
-  getCurrentUser (request) {
-    const userEmail = request.cookies.invoiceCollection;
-    return userstore.getUserByEmail(userEmail);
-  }
+    getCurrentUser(request) {
+        const userEmail = request.cookies.invoiceCollection;
+        return userstore.getUserByEmail(userEmail);
+    },
+
+    getCurrentUserUSerID2(request)  {
+        const userId = accounts.getCurrentUser();
+        logger.info("getCurrentUserUSerID2 returns: " + userId)
+        return userId.id;
+    },
+
+    getCurrentUserUserId(request) {
+        const userId = request.cookies.invoiceCollection;
+        return userstore.getUserById(userId);
+    },
+
 }
 
-module.exports = accounts;
+    module.exports = accounts;

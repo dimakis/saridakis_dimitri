@@ -3,7 +3,11 @@
 <section class="ui inverted tertiary grey segment">
     {{> listInvoiceCollections}}
     {{> addInvoiceCollection}}
+    <p>
+        <a href="/dashboard/deleteAllInvoiceCollections"> <button class="ui center align negative button"> Delete ALL invoice Collections</button></a>
+    </p>
     {{> addImages}}
+
 
 
 <section class="ui raised segment">
@@ -16,10 +20,8 @@
         {{/each}}
     </div>
     <br>
-    <Grid>
-    <div class="ui center align segment">
+    <div class="ui one field center align segment">
         <a href="/dashboard/deleteallpictures"> <button class="negative center align ui button">Delete All</button></a>
     </div>
-    </Grid>
 </section>
 </section>

@@ -1,53 +1,112 @@
 {
   "invoiceCollection": [
     {
-      "id": "f98e2786-152c-4c7d-b3e9-7c1693181478",
+      "id": "52a531ee-97f0-42f3-bce4-7fb94c97141d",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "title": "Green Ale LTD",
+      "invoices": [
+        {
+          "id": "b44ffb93-1afe-43e5-b4e2-83665cc46462",
+          "date": "1",
+          "invoiceNumber": "1",
+          "netAmount": "1",
+          "vatRate": "1%",
+          "vatAmount": "0.01",
+          "totalAmount": "1.01"
+        },
+        {
+          "id": "81127888-88c1-49cf-89ab-b5d695bb08b9",
+          "date": "2",
+          "invoiceNumber": "2",
+          "netAmount": "2",
+          "vatRate": "2%",
+          "vatAmount": "0.04",
+          "totalAmount": "2.04"
+        },
+        {
+          "id": "8727538d-84f5-43b1-afa9-93a19e265cd3",
+          "date": "2",
+          "invoiceNumber": "2",
+          "netAmount": "2",
+          "vatRate": "2%",
+          "vatAmount": "0.04",
+          "totalAmount": "2.04"
+        },
+        {
+          "id": "6a02c5c7-e6ec-4171-a61c-6124098a669a",
+          "date": "2",
+          "invoiceNumber": "2",
+          "netAmount": "5",
+          "vatRate": "2%",
+          "vatAmount": "0.10",
+          "totalAmount": "5.10",
+          "photos": []
+        },
+        {
+          "id": "92034ae2-9850-4b7b-82f2-9e243a48886d",
+          "date": "5",
+          "invoiceNumber": "5",
+          "netAmount": "5",
+          "vatRate": "5%",
+          "vatAmount": "0.25",
+          "totalAmount": "5.25",
+          "photos": []
+        },
+        {
+          "id": "7ee46e38-61c9-4fba-8f96-f64aaf1a4ecd",
+          "date": "2",
+          "invoiceNumber": "2",
+          "netAmount": "2",
+          "vatRate": "2%",
+          "vatAmount": "0.04",
+          "totalAmount": "2.04",
+          "photos": []
+        },
+        {
+          "id": "9cab7628-f374-4457-90a0-ed3ffc7708fc",
+          "date": "5164584",
+          "invoiceNumber": "65454135",
+          "netAmount": "56435",
+          "vatRate": "2%",
+          "vatAmount": "1128.70",
+          "totalAmount": "57563.70",
+          "photos": []
+        },
+        {
+          "id": "b34c169a-ecc6-4f8f-917a-234c44982464",
+          "date": "8",
+          "invoiceNumber": "8",
+          "netAmount": "8",
+          "vatRate": "2%",
+          "vatAmount": "0.16",
+          "totalAmount": "8.16",
+          "image": "a028b4f05eb7be52e4b03a35a590fc02.jpg",
+          "imageTitle": "1"
+        },
+        {
+          "id": "c03708a2-bbd4-42a8-92d1-d74f3dfc58ad",
+          "date": "5",
+          "invoiceNumber": "5",
+          "netAmount": "5",
+          "vatRate": "5%",
+          "vatAmount": "0.25",
+          "totalAmount": "5.25",
+          "image": "",
+          "imageTitle": ""
+        }
+      ]
+    },
+    {
+      "id": "decb5e83-0107-4671-bb0d-73910f6c5638",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "title": "homers list of play",
       "invoices": []
     },
     {
-      "id": "f0b68355-6c87-486d-932f-386f751e692d",
+      "id": "3ffa8cb1-33fb-4caf-9767-861f701660f8",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "title": "One",
-      "invoices": [
-        {
-          "id": "985ac189-5f39-47bd-91b3-2f54efa06f73",
-          "date": "2",
-          "invoiceNumber": "2",
-          "netAmount": "2"
-        },
-        {
-          "id": "b7cc989b-391b-4bc0-b6bf-0c4e5a604048",
-          "date": "1",
-          "invoiceNumber": "1",
-          "netAmount": "1"
-        },
-        {
-          "id": "de034488-7551-4515-8984-8fbef2daaf54",
-          "date": "1",
-          "invoiceNumber": "1",
-          "netAmount": "1"
-        },
-        {
-          "id": "ddd6be9a-5b52-4cfe-ba25-09ea263ceadb",
-          "date": "1",
-          "invoiceNumber": "1",
-          "netAmount": "1"
-        },
-        {
-          "id": "fa4df8af-c36f-4d74-94f5-e007986d7b7c",
-          "date": "1",
-          "invoiceNumber": "1",
-          "netAmount": "1"
-        },
-        {
-          "id": "807b7329-7446-4e57-843a-f2eb3e0d3609",
-          "date": "1",
-          "invoiceNumber": "1",
-          "netAmount": "1"
-        }
-      ]
+      "invoices": []
     }
   ]
 }

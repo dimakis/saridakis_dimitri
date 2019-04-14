@@ -45,6 +45,12 @@ const dashboard = {
         response.redirect('/dashboard');
     },
 
+    deleteAllInvoiceCollections(request, response) {
+        const loggedInUser = accounts.getCurrentUser(request);
+        invoiceStore.removeAllInvoiceCollections(loggedInUser.id);
+        response.redirect('/dashboard');
+    },
+
     addInvoiceCollection(request, response) {
         logger.info(`Getting into addInvoice in dashboard.js`)
         const loggedInUser = accounts.getCurrentUser(request);
@@ -70,6 +76,8 @@ const dashboard = {
         pictureStore.deletePicture(loggedInUser.id, request.query.img);
         response.redirect('/dashboard');
     },
+
+
 
 };
 

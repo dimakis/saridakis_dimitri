@@ -1,4 +1,5 @@
 <table class="ui sortable inverted celled table">
+<form>
     <thead>
     <tr>
         <th>Date</th>
@@ -6,28 +7,45 @@
         <th>Net Amount</th>
         <th>VAT Amount</th>
         <th>VAT Rate</th>
-        <th>Status</th>
         <th>Total Amount</th>
         <th></th>
     </tr>
     </thead>
-    <tbody>
+<tbody>
     {{#each invoiceCollection.invoices}}
-        <tr>
-            <td>{{date}}</td>
-            <td>{{invoiceNumber}}</td>
-            <td>{{netAmount}}</td>
-            <td>{{vatAmount}}</td>
-            <td>{{vatRate}}</td>
-            <td>{{status}}</td>
-            <td>{{totalAmount}}</td>
-            <td>
-                <a href="/invoiceCollection/{{../invoiceCollection.id}}/updateInvoice/{{id}}">
-                    <i class=" yellow edit outline icon"></i></a>
-                <a href="/invoiceCollection/{{../invoiceCollection.id}}/deleteInvoice/{{id}}"> <i class=" red trash icon"></i></a>
-            </td>
-        </tr>
-        </form>
+    <tr>
+        <td>{{date}}</td>
+        <td>{{invoiceNumber}}</td>
+        <td>{{netAmount}}</td>
+        <td>{{vatAmount}}</td>
+        <td>{{vatRate}}</td>
+        <td>{{totalAmount}}</td>
+        <td>
+            <a href="/updateInvoice/{{../invoiceCollection.id}}/{{id}}"> <i class=" yellow edit outline icon"></i></a>
+            <a href="/updateInvoicePage/{{../invoiceCollection.id}}/{{id}}"> <i
+                    class=" purple edit outline icon"></i></a>
+            <a href="/invoiceCollection/{{../invoiceCollection.id}}/deleteInvoice/{{id}}"> <i
+                    class=" red trash icon"></i></a>
+            <a href="/invoiceCollection/{{../invoiceCollection.id}}/viewInvoice{{id}}"> <i class=" green edit outline icon"></i></a>
+
+        </td>
+    </tr>
+    </form>
     {{/each}}
     </tbody>
 </table>
+<section class="ui  segment">
+    <div class="ui card">
+        <div class="ui small center aligned image">
+            <img src="{{img}}">
+        </div>
+        <div class="content">
+            <p class="center aligned header">{{title}}</p>
+            <div class="center aligned meta">
+                <a href="/dashboard/deletepicture?img={{img}}">
+                <i class="red icon trash"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

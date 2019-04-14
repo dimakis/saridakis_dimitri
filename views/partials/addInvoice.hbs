@@ -1,5 +1,6 @@
-<form class="ui stacked segment form" action="/invoiceCollection/{{invoiceCollection.id}}/addInvoice" method="POST">
-    <div class="seven fields">
+<form class="ui stacked segment form" action="/invoiceCollection/{{invoiceCollection.id}}/addInvoice" method="POST" enctype="multipart/form-data">
+    <section class="ui stacked segment form">
+        <div class="four fields">
         <div class="field">
             <label>Date</label>
             <input placeholder="Date" type="text" name="date" autofocus required>
@@ -12,32 +13,21 @@
             <label>Net Amount</label>
             <input placeholder="Net" type="text" name="netAmount" required>
         </div>
-        <div class=" field ui form">
+        <div class="field">
             <label>VAT Rate</label>
-            <select id="vatRate" required>
-                <option value="9">9%</option>
-                <option value="13.5">13.5%</option>
-                <option value="23">23%</option>
-            </select>
+            <input placeholder="Vat Rate in %" type="text" name="vatRate" required>
+        </div>
+    </div>
+    </section>
+    <section class="ui stacked segment form">
+        <div class="field">
+            <label>File</label>
+            <input type="file" name="myImage">
         </div>
         <div class="field">
-            <label>Invoice Status</label>
-            <select id="invoiceStatus">
-                <option value="paid">Paid</option>
-                <option value="due">Due</option>
-                <option value="overDue">Over-due</option>
-            </select>
+            <label>File Title</label>
+            <input placeholder="Title" type="text" name="imageTitle">
         </div>
-        <form action="/invoiceCollection/uploadpicture" method="post" enctype="multipart/form-data">
-                <div class="field">
-                    <label>File</label>
-                    <input type="file" name="picture">
-                </div>
-                <div class="field">
-                    <label>File Title</label>
-                    <input placeholder="Title" type="text" name="title">
-                </div>
-            <button> <i class="paper plane icon"></i></button>
-        </form>
-    </div>
+        <button><i class="large paper plane icon"></i></button>
+    </section>
 </form>

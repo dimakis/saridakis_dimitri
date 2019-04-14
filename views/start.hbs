@@ -8,24 +8,7 @@
         A small app that lets you keep track of your companies expenditure, invoices and VAT in one library.<br>
         Speaking of which...{{fistname}} you've got: <br>
 
-    <div class="ui two statistics">
-        <div class="red statistic">
-            <div class="value"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                {{totalCollections}}
-            </font></font></div>
-            <div class="label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                Total Invoice Collections
-            </font></font></div>
-        </div>
-    <div class="red statistic">
-        <div class="value"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-            {{totalInvoices}}
-        </font></font></div>
-        <div class="label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-            Total Invoices
-        </font></font></div>
-    </div>
-</div>
+    {{> loggedOnUserStats}}
 
 </section>
 <section class="ui inverted center aligned middle aligned segment">
@@ -33,7 +16,11 @@
      src="https://cdn.glitch.com/64d66aa6-ac6a-4743-b033-486978dcd43a%2FaccountingCartoon.png?1551569184090"
      alt="We do the boring stuff for you.">
 <p>
+    <br>
     The <i class="large red heartbeat icon"></i>
     of your Business.
 </p>
+</section>
+<section class="ui center aligned middle aligned segment">
+{{> totalStats}}
 </section>
