@@ -1,3 +1,95 @@
+<form>
+<table class="ui sortable inverted celled table">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Invoice Number</th>
+            <th>Net Amount</th>
+            <th>VAT Amount</th>
+            <th>VAT Rate</th>
+            <th>Total Amount</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{updateInvoicePage.index.invoice}}
+        <tr>
+            <td>{{date}}</td>
+            <td>{{invoiceNumber}}</td>
+            <td>{{updateInvoicePage.invoice.netAmount}}</td>
+            <td>{{invoice.vatAmount}}</td>
+            <td>{{vatRate}}</td>
+            <td>{{totalAmount}}</td>
+            <td>
+                <a href="/invoiceCollection/{{../invoiceCollection.id}}/deleteInvoice/{{id}}"> <i
+                        class=" red trash icon"></i></a>
+            </td>
+        </tr>
+       </tbody>
+</table>
+</form>
+
+<form>
+<table class="ui sortable inverted celled table">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Invoice Number</th>
+            <th>Net Amount</th>
+            <th>VAT Amount</th>
+            <th>VAT Rate</th>
+            <th>Total Amount</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{updateInvoicePage.invoice}}
+        <tr>
+            <td>{{date}}</td>
+            <td>{{invoiceNumber}}</td>
+            <td>{{netAmount}}</td>
+            <td>{{vatAmount}}</td>
+            <td>{{vatRate}}</td>
+            <td>{{totalAmount}}</td>
+            <td>
+                <a href="/invoiceCollection/{{../invoiceCollection.id}}/deleteInvoice/{{id}}"> <i
+                        class=" red trash icon"></i></a>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+</form>
+
+<table class="ui sortable inverted celled table">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Invoice Number</th>
+            <th>Net Amount</th>
+            <th>VAT Amount</th>
+            <th>VAT Rate</th>
+            <th>Total Amount</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{updateInvoicePage.index.invoice}}
+        <tr>
+            <td>{{date}}</td>
+            <td>{{invoiceNumber}}</td>
+            <td>{{netAmount}}</td>
+            <td>{{vatAmount}}</td>
+            <td>{{vatRate}}</td>
+            <td>{{totalAmount}}</td>
+            <td>
+                <a href="/invoiceCollection/{{../invoiceCollection.id}}/deleteInvoice/{{id}}"> <i
+                        class=" red trash icon"></i></a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
 <table class="ui sortable inverted celled table">
     <form>
         <thead>
@@ -16,37 +108,6 @@
         <tr>
             <td>{{date}}</td>
             <td>{{invoiceNumber}}</td>
-            <td>{{updateInvoicePage.invoice.netAmount}}</td>
-            <td>{{invoice.vatAmount}}</td>
-            <td>{{vatRate}}</td>
-            <td>{{totalAmount}}</td>
-            <td>
-                <a href="/invoiceCollection/{{../invoiceCollection.id}}/deleteInvoice/{{id}}"> <i
-                        class=" red trash icon"></i></a>
-            </td>
-        </tr>
-    </form>
-       </tbody>
-</table>
-
-<table class="ui sortable inverted celled table">
-    <form>
-        <thead>
-        <tr>
-            <th>Date</th>
-            <th>Invoice Number</th>
-            <th>Net Amount</th>
-            <th>VAT Amount</th>
-            <th>VAT Rate</th>
-            <th>Total Amount</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        {{invoice}}
-        <tr>
-            <td>{{date}}</td>
-            <td>{{invoiceNumber}}</td>
             <td>{{netAmount}}</td>
             <td>{{vatAmount}}</td>
             <td>{{vatRate}}</td>
@@ -56,77 +117,13 @@
                         class=" red trash icon"></i></a>
             </td>
         </tr>
-    </form>
     </tbody>
-</table>
-
-<table class="ui sortable inverted celled table">
-    <form>
-        <thead>
-        <tr>
-            <th>Date</th>
-            <th>Invoice Number</th>
-            <th>Net Amount</th>
-            <th>VAT Amount</th>
-            <th>VAT Rate</th>
-            <th>Total Amount</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        {{invoices}}
-        <tr>
-            <td>{{date}}</td>
-            <td>{{invoiceNumber}}</td>
-            <td>{{netAmount}}</td>
-            <td>{{vatAmount}}</td>
-            <td>{{vatRate}}</td>
-            <td>{{totalAmount}}</td>
-            <td>
-                <a href="/invoiceCollection/{{../invoiceCollection.id}}/deleteInvoice/{{id}}"> <i
-                        class=" red trash icon"></i></a>
-            </td>
-        </tr>
     </form>
-    </tbody>
 </table>
 
 
-<table class="ui sortable inverted celled table">
-    <form>
-        <thead>
-        <tr>
-            <th>Date</th>
-            <th>Invoice Number</th>
-            <th>Net Amount</th>
-            <th>VAT Amount</th>
-            <th>VAT Rate</th>
-            <th>Total Amount</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        {{invoiceCollectionId}}
-        <tr>
-            <td>{{date}}</td>
-            <td>{{invoiceNumber}}</td>
-            <td>{{netAmount}}</td>
-            <td>{{vatAmount}}</td>
-            <td>{{vatRate}}</td>
-            <td>{{totalAmount}}</td>
-            <td>
-                <a href="/invoiceCollection/{{../invoiceCollection.id}}/deleteInvoice/{{id}}"> <i
-                        class=" red trash icon"></i></a>
-            </td>
-        </tr>
-    </form>
-    </tbody>
-</table>
-
-
-<section class=" ui stacked raised segment">
-    <form class="ui form" action="/updateInvoicePage/{{../invoiceCollection.id}}/updateInvoice/{{id}}" method="POST"
-          enctype=multipart/form-data>
+<form class="ui form" action="/updateInvoicePage/{{../invoiceCollection.id}}/updateInvoice/{{id}}" method="POST" enctype=multipart/form-data>
+<section class=" ui stacked raised segment form">
         <div class="four fields">
             <div class="field">
                 <label>Date</label>
@@ -156,5 +153,5 @@
             </div>
             <button><i class="large paper plane icon"></i></button>
         </section>
-    </form>
 </section>
+</form>

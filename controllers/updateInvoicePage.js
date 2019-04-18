@@ -14,7 +14,7 @@ const updateInvoicePage = {
         const invoiceCollectionId = request.params.id;
         const invoiceCollection = invoiceStore.getInvoiceCollection(invoiceCollectionId);
         const invoiceId = request.params.invoiceId;
-        const invoice = invoiceStore.getInvoice3(invoiceCollectionId, invoiceId);
+        const invoice = invoiceStore.getInvoice2(invoiceCollectionId, invoiceId);
         logger.info('im in the updateInvoicePage Controller with ' + loggedInUser + ", invoiceCollection = " + invoiceCollection +
             ", InvoiceCollection ID: " + invoiceCollectionId + ", invoice id= " + invoiceId + ", invo: " + invoice);
         if (loggedInUser) {

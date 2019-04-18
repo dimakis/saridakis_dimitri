@@ -15,44 +15,6 @@
           "totalAmount": "1.01"
         },
         {
-          "id": "81127888-88c1-49cf-89ab-b5d695bb08b9",
-          "date": "2",
-          "invoiceNumber": "2",
-          "netAmount": "2",
-          "vatRate": "2%",
-          "vatAmount": "0.04",
-          "totalAmount": "2.04"
-        },
-        {
-          "id": "8727538d-84f5-43b1-afa9-93a19e265cd3",
-          "date": "2",
-          "invoiceNumber": "2",
-          "netAmount": "2",
-          "vatRate": "2%",
-          "vatAmount": "0.04",
-          "totalAmount": "2.04"
-        },
-        {
-          "id": "6a02c5c7-e6ec-4171-a61c-6124098a669a",
-          "date": "2",
-          "invoiceNumber": "2",
-          "netAmount": "5",
-          "vatRate": "2%",
-          "vatAmount": "0.10",
-          "totalAmount": "5.10",
-          "photos": []
-        },
-        {
-          "id": "92034ae2-9850-4b7b-82f2-9e243a48886d",
-          "date": "5",
-          "invoiceNumber": "5",
-          "netAmount": "5",
-          "vatRate": "5%",
-          "vatAmount": "0.25",
-          "totalAmount": "5.25",
-          "photos": []
-        },
-        {
           "id": "7ee46e38-61c9-4fba-8f96-f64aaf1a4ecd",
           "date": "2",
           "invoiceNumber": "2",
@@ -93,20 +55,151 @@
           "totalAmount": "5.25",
           "image": "",
           "imageTitle": ""
+        },
+        {
+          "id": "b22bedda-3b62-4439-ad55-5fb9b73e13a5",
+          "date": "7",
+          "invoiceNumber": "7",
+          "netAmount": "7",
+          "vatRate": "7%",
+          "vatAmount": "0.49",
+          "totalAmount": "7.49"
+        },
+        {
+          "id": "35fa18b1-f27c-4860-a776-be7382d025dc",
+          "date": "2",
+          "invoiceNumber": "232131",
+          "netAmount": "1232312",
+          "vatRate": "231312",
+          "vatAmount": "2850485533.44",
+          "totalAmount": "2851717845.44"
+        },
+        {
+          "id": "b1fcda6e-99f7-45bc-9d53-58fe2de497ed",
+          "date": "6556",
+          "invoiceNumber": "56",
+          "netAmount": "56",
+          "vatRate": "1",
+          "vatAmount": "0.56",
+          "totalAmount": "56.56"
+        },
+        {
+          "id": "8e248211-847b-4e55-94ab-b0cafbae5161",
+          "date": "2",
+          "invoiceNumber": "2",
+          "netAmount": "2",
+          "vatRate": "2",
+          "vatAmount": "0.04",
+          "totalAmount": "2.04"
+        },
+        {
+          "id": "a639e9ea-0a33-467a-8e14-08c387c4f216",
+          "date": "3",
+          "invoiceNumber": "3",
+          "netAmount": "33",
+          "vatRate": "3",
+          "vatAmount": "0.99",
+          "totalAmount": "33.99"
+        },
+        {
+          "id": "3e000c70-f6a3-4dca-bdd0-981d5ecf0bb3",
+          "date": "2",
+          "invoiceNumber": "2",
+          "netAmount": "22",
+          "vatRate": "2",
+          "vatAmount": "0.44",
+          "totalAmount": "22.44"
+        },
+        {
+          "id": "b4e085a7-0ea9-4a44-b796-c219f7335100",
+          "date": "45",
+          "invoiceNumber": "45",
+          "netAmount": "45",
+          "vatRate": "45",
+          "vatAmount": "20.25",
+          "totalAmount": "65.25"
         }
       ]
     },
     {
-      "id": "decb5e83-0107-4671-bb0d-73910f6c5638",
+      "id": "e9021d30-2c78-4b2f-82f4-57f1933ab690",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "title": "homers list of play",
+      "title": "beer",
+      "invoices": [
+        {
+          "id": "b44ffb93-1afe-43e5-b4e2-83665cc46461",
+          "date": "1",
+          "invoiceNumber": "1",
+          "netAmount": "1",
+          "vatRate": "1%",
+          "vatAmount": "0.01",
+          "totalAmount": "1.01"
+        },
+        {
+          "id": "ce211632-7b79-4bb9-9f38-2d557b1bb84e",
+          "date": "2",
+          "invoiceNumber": "2",
+          "netAmount": "2",
+          "vatRate": "2",
+          "vatAmount": "0.04",
+          "totalAmount": "2.04"
+        },
+        {
+          "id": "fda6efaf-d5e6-425c-b078-f911a2ab9fd0",
+          "date": "4",
+          "invoiceNumber": "4",
+          "netAmount": "4",
+          "vatRate": "4",
+          "vatAmount": "0.16",
+          "totalAmount": "4.16"
+        }
+      ]
+    },
+    {
+      "id": "fa2f4f2a-b4bf-42a5-9259-96229672262d",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "title": "1",
       "invoices": []
     },
     {
-      "id": "3ffa8cb1-33fb-4caf-9767-861f701660f8",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "title": "One",
+      "id": "df23dc61-9e50-4e7d-87c3-90a467aafb94",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "title": "2",
       "invoices": []
+    },
+    {
+      "id": "ed4a3719-96a3-4ebb-b00d-e571c302ed59",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "title": "2",
+      "invoices": [
+        {
+          "id": "56c06278-5221-4ee7-a228-8caf7ae96de1",
+          "date": "4",
+          "invoiceNumber": "4",
+          "netAmount": "4",
+          "vatRate": "4",
+          "vatAmount": "0.16",
+          "totalAmount": "4.16"
+        },
+        {
+          "id": "b24adca6-c99f-49ea-af52-26317e32fc90",
+          "date": "2",
+          "invoiceNumber": "2",
+          "netAmount": "2",
+          "vatRate": "2",
+          "vatAmount": "0.04",
+          "totalAmount": "2.04"
+        },
+        {
+          "id": "a5076b16-3438-48c3-8efe-64650baa7662",
+          "date": "2",
+          "invoiceNumber": "2212",
+          "netAmount": "123",
+          "vatRate": "1",
+          "vatAmount": "1.23",
+          "totalAmount": "124.23"
+        }
+      ]
     }
   ]
 }

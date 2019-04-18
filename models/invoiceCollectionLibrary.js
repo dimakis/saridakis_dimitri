@@ -12,7 +12,7 @@ const invoiceCollectionLibrary = {
 
   store: new JsonStore('./models/invoiceCollectionLibrary.json', { invoiceCollection: [] }),
   collection: 'invoiceCollection',
-  invoices: 'invoices',
+  //invoices: 'invoices',
 
 
   getAllInvoiceCollections() {
@@ -26,24 +26,25 @@ const invoiceCollectionLibrary = {
 
   getInvoice3(id, invoId) {
     //logger.info(store);
-    const invoCol = this.store.findBy(this.collection, {id: id});
-    const invo = this.invoCol.findBy(this.invoCol, {id: invoId});
-    return invo;
+    const invoCol = this.store.findBy(this.collection, {id: invoId});
+    return invoCol;
   },
 
   getInvoice2(id, invoiceId) {
     const invoiceCollection = this.getInvoiceCollection(id);
     const invoices = invoiceCollection.invoices;
-    const invo1 = invoices.invoiceId;
-    let i = 0;
+    //const invo1 = invoices.invoiceId;
+    logger.info('InvoiceId: ' + invoiceId);
+
     let invo = 0;
     for (let i in invoices) {
-      if(invoices.id === invoiceId) {
+      logger.info('InvoColId: ' + invoices[i].id);
+      if(invoices[i].id === invoiceId) {
         invo = invoices[i]
       }
     }
     //const invo = invoices;
-    //return invo1;
+    return invo;
     //logger.info('in getInvoices: invoiceCollection' + invoiceCollection + ', invoices: '+ invoices + ', invo' + invo);
     //return this.store.findBy(this.collection, {id: id }, {invoiceId: invoiceId});//.findOneBy(this.collection, { id: id });
   },
@@ -68,14 +69,13 @@ const invoiceCollectionLibrary = {
   getInvoice(id, invoiceId)  {
     const invoiceCollection = this.getInvoiceCollection(id);
     const invoices = invoiceCollection.invoices;
-    const invo = invoices.forEach();
-    //return this.store.findOneBy(this.invoices, { id: invoiceId });
-    return this.store.getElementById
+    const invo = this.invoices.findBy(this.invoices, {id: invoiceId});
+    //return this.store.findOneBy(this.collection.invoices, { id: invoiceId });
+    return invo;
   },
 
-  addInvoice(id, invoice) {
+  addInvoiceToLibrary(id, invoice) {
     const invoiceCollection = this.getInvoiceCollection(id);
-    //invoiceCollection.addPicture();
     invoiceCollection.invoices.push(invoice);
   },
 
@@ -158,11 +158,6 @@ const invoiceCollectionLibrary = {
     invoices[thepos].vatAmount=invoiceDetails.vatAmount;
     invoices[thepos].totalAmount=invoiceDetails.totalAmount;
   },
-
-  calcVat(id, invoice)  {
-    const invoiceToCalc = this.collection.invoices.findByIds(invoiceCollection.id)
-
-  }
   
 };
 

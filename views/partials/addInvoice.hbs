@@ -1,6 +1,6 @@
 <form class="ui stacked segment form" action="/invoiceCollection/{{invoiceCollection.id}}/addInvoice" method="POST" enctype="multipart/form-data">
     <section class="ui stacked segment form">
-        <div class="four fields">
+    <div class="five fields">
         <div class="field">
             <label>Date</label>
             <input placeholder="Date" type="text" name="date" autofocus required>
@@ -17,17 +17,20 @@
             <label>VAT Rate</label>
             <input placeholder="Vat Rate in %" type="text" name="vatRate" required>
         </div>
-    </div>
-    </section>
-    <section class="ui stacked segment form">
         <div class="field">
-            <label>File</label>
-            <input type="file" name="myImage">
-        </div>
-        <div class="field">
-            <label>File Title</label>
-            <input placeholder="Title" type="text" name="imageTitle">
-        </div>
         <button><i class="large paper plane icon"></i></button>
-    </section>
+    </div>
+    </div>
+</section>
+<section>
+    <div class="ui stacked segment form field">
+        <label>File</label>
+        <input type="file" name="picture">
+    </div>
+    <div class="field">
+        <label>File Title</label>
+        <input placeholder="Title" type="text" name="title">
+    </div>
+    <button><i class="large paper plane icon"></i></button>
+</section>
 </form>
